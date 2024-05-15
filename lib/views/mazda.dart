@@ -13,11 +13,11 @@ class MazdaViewUI extends StatefulWidget {
 class _MazdaViewUIState extends State<MazdaViewUI> {
   //create variable to use with ListView car
   List<String> _Mazda = [
-    'assets/images/mazdarx7.jpg',
-    'assets/images/mazdarx7.jpg',
-    'assets/images/mazdarx7.jpg',
-    'assets/images/mazdarx7.jpg',
-    'assets/images/mazdarx7.jpg',
+    'assets/images/mazdaRx7.jpg',
+    'assets/images/mazdaRx7.jpg',
+    'assets/images/mazdaRx7.jpg',
+    'assets/images/mazdaRx7.jpg',
+    'assets/images/mazdaRx7.jpg',
     
   ];
   List<String> _MazdaSUV = [

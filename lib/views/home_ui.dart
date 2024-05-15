@@ -31,13 +31,13 @@ class _HomeUIState extends State<HomeUI> {
       appBar: AppBar(
         title: Text(
           'คำนวณค่างวดรถ',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Color.fromARGB(255, 0, 253, 169)),
         ),
         centerTitle: true,
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(4.0),
           child: Container(
-            color: Colors.black,
+            color: Color.fromARGB(255, 0, 109, 44),
             height: 1.0,
           ),
         ),
@@ -54,20 +54,20 @@ class _HomeUIState extends State<HomeUI> {
           SalomonBottomBarItem(
             icon: Image.asset(
               'assets/images/logoToyota.png',
-              width: MediaQuery.of(context).size.width * 0.1,
+              width: MediaQuery.of(context).size.width * 0.07,
             ),
             title: Text(''),
-            selectedColor: Colors.grey,
-            unselectedColor: Colors.grey[400],
+            selectedColor: Color.fromARGB(255, 0, 8, 255),
+            unselectedColor: const Color.fromARGB(255, 255, 1, 1),
           ),
           SalomonBottomBarItem(
             icon: Image.asset(
               'assets/images/logoHonda.png',
-              width: MediaQuery.of(context).size.width * 0.1,
+              width: MediaQuery.of(context).size.width * 0.07,
             ),
             title: Text(''),
-            selectedColor: Colors.grey,
-            unselectedColor: Colors.grey[400],
+            selectedColor: Color.fromARGB(255, 0, 8, 255),
+            unselectedColor: const Color.fromARGB(255, 255, 1, 1),
           ),
           SalomonBottomBarItem(
             icon: Image.asset(
@@ -75,26 +75,26 @@ class _HomeUIState extends State<HomeUI> {
               width: MediaQuery.of(context).size.width * 0.15,
             ),
             title: Text(''),
-            selectedColor: Colors.grey,
-            unselectedColor: Colors.grey[400],
+            selectedColor: Color.fromARGB(255, 0, 8, 255),
+            unselectedColor: const Color.fromARGB(255, 255, 1, 1),
           ),
           SalomonBottomBarItem(
             icon: Image.asset(
               'assets/images/logonissan.png',
-              width: MediaQuery.of(context).size.width * 0.1,
+              width: MediaQuery.of(context).size.width * 0.07,
             ),
             title: Text(''),
-            selectedColor: Colors.grey,
-            unselectedColor: Colors.grey[400],
+            selectedColor: Color.fromARGB(255, 0, 8, 255),
+            unselectedColor: const Color.fromARGB(255, 255, 1, 1),
           ),
           SalomonBottomBarItem(
             icon: Image.asset(
               'assets/images/logoMazda.jpg',
-              width: MediaQuery.of(context).size.width * 0.1,
+              width: MediaQuery.of(context).size.width * 0.07,
             ),
             title: Text(''),
-            selectedColor: Colors.grey,
-            unselectedColor: Colors.grey[400],
+            selectedColor: Color.fromARGB(255, 0, 8, 255),
+            unselectedColor: const Color.fromARGB(255, 255, 1, 1),
           ),
         ],
       ),

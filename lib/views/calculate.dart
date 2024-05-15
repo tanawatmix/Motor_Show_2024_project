@@ -1,5 +1,3 @@
-// ignore_for_file: unnecessary_import, unused_element
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,13 +11,12 @@ class CarCalculateUI extends StatefulWidget {
 }
 
 class _CarCalculateUIState extends State<CarCalculateUI> {
-  //radio group
   final formatter = NumberFormat('#,###');
   int _downSelected = 10;
-//textfield ctrl
+
   TextEditingController priceCtrl = TextEditingController(text: '');
   TextEditingController interestCtrl = TextEditingController(text: '');
-//List installment
+
   String _installSelected = '12 งวด(1ปี)';
   List<String> _installmentList = [
     '12 งวด(1ปี)',
@@ -29,50 +26,50 @@ class _CarCalculateUIState extends State<CarCalculateUI> {
     '60 งวด(5ปี)',
     '72 งวด(6ปี)',
   ];
-//validated
+
   warningMessage(context, msg) {
     return showDialog(
-        barrierDismissible: false,
-        context: context,
-        builder: (context) => AlertDialog(
-              title: Container(
-                height: MediaQuery.of(context).size.height * 0.08,
-                width: MediaQuery.of(context).size.width * 0.7,
-                decoration: BoxDecoration(
-                    color: Colors.grey[400],
-                    borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                  child: Text(
-                    'คำเตือน',
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
-                ),
-              ),
-              content: Text(
-                msg,
-                style: TextStyle(
-                  color: Colors.grey,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              actionsAlignment: MainAxisAlignment.center,
-              actions: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    'ตกลง',
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[400],
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                  ),
-                )
-              ],
-            ));
+      barrierDismissible: false,
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Container(
+          height: MediaQuery.of(context).size.height * 0.08,
+          width: MediaQuery.of(context).size.width * 0.7,
+          decoration: BoxDecoration(
+              color: Colors.grey[400], borderRadius: BorderRadius.circular(10)),
+          child: Center(
+            child: Text(
+              'คำเตือน',
+              style: TextStyle(color: Colors.grey[700]),
+            ),
+          ),
+        ),
+        content: Text(
+          msg,
+          style: TextStyle(
+            color: Colors.grey,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        actionsAlignment: MainAxisAlignment.center,
+        actions: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(
+              'ตกลง',
+              style: TextStyle(color: Colors.grey[700]),
+            ),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.grey[400],
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+            ),
+          )
+        ],
+      ),
+    );
   }
 
   @override
@@ -105,18 +102,16 @@ class _CarCalculateUIState extends State<CarCalculateUI> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //logo
                 Container(
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(13.0),
+                    borderRadius: BorderRadius.circular(40),
                     child: Image.asset(
                       'assets/images/logoAuto.jpg',
                       width: MediaQuery.of(context).size.width * 0.4,
-                      // height: MediaQuery.of(context).size.height * 0.35,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -134,7 +129,6 @@ class _CarCalculateUIState extends State<CarCalculateUI> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.015,
                 ),
-                //textfield price car
                 Container(
                   width: MediaQuery.of(context).size.width * 1,
                   height: 40,
@@ -154,11 +148,6 @@ class _CarCalculateUIState extends State<CarCalculateUI> {
                         borderSide: BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      // hintText: 'ป้อนจำนวนคน(คน)',
-                      // prefixIcon: Icon(
-                      //   Icons.person,
-                      //   color: Colors.yellow,
-                      // )
                     ),
                   ),
                 ),
@@ -173,14 +162,16 @@ class _CarCalculateUIState extends State<CarCalculateUI> {
                       color: Colors.grey[600]),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.015,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
 //Radio down
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
+                  padding: EdgeInsets.symmetric(horizontal: 0),
+                  child: Wrap(
+                    spacing: 10.0, // ช่องว่างระหว่างแต่ละ Radio + Text
                     children: [
                       Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Radio(
                             value: 10,
@@ -199,10 +190,8 @@ class _CarCalculateUIState extends State<CarCalculateUI> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.01,
-                      ),
                       Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Radio(
                             value: 20,
@@ -221,10 +210,8 @@ class _CarCalculateUIState extends State<CarCalculateUI> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.01,
-                      ),
                       Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Radio(
                             value: 25,
@@ -243,10 +230,8 @@ class _CarCalculateUIState extends State<CarCalculateUI> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.01,
-                      ),
                       Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Radio(
                             value: 30,
@@ -269,7 +254,7 @@ class _CarCalculateUIState extends State<CarCalculateUI> {
                   ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.015,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Text(
                   'จำนวนปีที่ผ่อน',

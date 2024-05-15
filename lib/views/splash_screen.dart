@@ -35,9 +35,12 @@ class _SplashScreenUIState extends State<SplashScreenUI> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            
             Image.asset(
               'assets/images/logoAuto.jpg',
-              width: MediaQuery.of(context).size.width * 0.65,
+              width: MediaQuery.of(context).size.width * 0.35,
+              height: MediaQuery.of(context).size.height * 0.35,
+              
             ),
             Text(
               'Motor Show 2024',
@@ -48,7 +51,7 @@ class _SplashScreenUIState extends State<SplashScreenUI> {
             ),
             Text(
               'THE MOBILITY OF JOYFUL EXPRERIENCES',
-              style: GoogleFonts.alata(
+              style: GoogleFonts.nabla(
                 fontSize: MediaQuery.of(context).size.height * 0.025,
                 color: Colors.black,
               ),
